@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/media/css/about.css"/>
+<link rel="icon" type="image/png" href="/media/img/profile.png"/>
+<title>bashl - personal website</title>
+</head>
+<body>
+	{% block navbar %}
+<div class="block">
+	<a href="/"><img src="/media/img/profile.png" alt="profile pic"></a>
+	<p><b>bashl - personal website </b></p>
+	<div class="links">
+	<a href="https://github.com/bashl">github</a>
+	<a href="/about.html">about me</a>
+	</div>
+	<p>wannabe sysadmin</p>
+	{% endblock navbar %}
+</div>
+<div class="block2">
+	{% block content %}
+	{% endblock content %}
+</div>
+</body>
+</html>
