@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="index">
+<h2 style="text-align: center";>Study with me</h2>
+<h3 style="text-align: center";>Current books: Python Crash Course and Django for Beginners</h3>
+  {% for entry in entries %}
+    <p class="post" style="padding-top: 0.7rem";>{{ entry.publish_date.strftime("%B %d, %Y") }} <a title="../{{ entry.permalink }}" href="../{{entry.permalink}}">{{entry.title }}</a></p>
+    <div class="tags">tags:
+	    {% for tag in entry.tags %}
+	    <a class="tag" href="/tag/{{ tag.slug }}"><span>{{ tag.name }}</span></a>{% if not loop.last %}, {% endif %}
+	    {% endfor %}
+  {% endfor %}
+
+<a href="https://github.com/bashl/blog"><p style="text-align: center";>Source code</p></a>
+</div>
+{% endblock content %}
+{% block body %}
+
+{{ super() }}
+{% set static_prefix = "../../" %}
+{% endblock body %}
